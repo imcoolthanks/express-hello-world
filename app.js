@@ -10,8 +10,8 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 app.post("/lazy-developer", (req, res) => {
   console.log(req.body);
-  const {classes, functions} = req.body;
-  res.send(lazyDevelopers.getNextProbableWords(classes, functions));
+  const {classes, statements} = req.body;
+  res.send(lazyDevelopers.getNextProbableWords(classes, statements));
 });
 
 app.post("/greedymonkey", (req, res) => {
