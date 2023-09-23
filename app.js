@@ -4,6 +4,13 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
+app.post("/greedymonkey", (req, res) => {
+  res.json(req);
+
+})
+
+
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
