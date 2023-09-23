@@ -7,8 +7,8 @@ const port = process.env.PORT || 3001;
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.post("/lazy-developer", (req, res) => {
-  const {classes, functions} = req.body;
-  console.log(req.body);
+  console.log(req);
+  const {classes, functions} = req;
   res.send(lazyDevelopers.getNextProbableWords(classes, functions));
 });
 
