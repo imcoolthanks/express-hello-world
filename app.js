@@ -4,11 +4,13 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(express.json());
+
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.post("/lazy-developer", (req, res) => {
-  console.log(req);
-  const {classes, functions} = req;
+  console.log(req.body);
+  const {classes, functions} = req.body;
   res.send(lazyDevelopers.getNextProbableWords(classes, functions));
 });
 
