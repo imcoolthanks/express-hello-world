@@ -4,6 +4,7 @@ function handle(arr) {
         let args = arr[i].split(", ").map((x) => parseInt(x));
         const solve = (candidates, target) => {
             let res = 0;
+            candidates.sort();
             const dfs = (curCandidates, curTarget, start) => {
                 if(curTarget == 0) res += 1;
                 if(curTarget <= 0 ) return;
