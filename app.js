@@ -1,5 +1,6 @@
 const lazyDevelopers = require("./Challenges/lazyDevelopers.js");
 const greedyMonkey = require("./Challenges/greedymonkey.js");
+const digitalColonies = require("./Challenges/digitalColonies.js");
 
 const express = require("express");
 const app = express();
@@ -20,8 +21,8 @@ app.post("/greedymonkey", (req, res) => {
 })
 
 app.post("/digital-colony", (req, res) => {
-  console.log(req);
-  console.log(req.body);
+  const results = req.body.map((obj) => digitalColonies.solve(obj.generations, obj.colony));
+  res.send(results);
 })
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
