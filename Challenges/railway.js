@@ -14,6 +14,7 @@ function handle(arr) {
             dfs(candidates, target, 0);
             results.push(res);
         }
+        console.log("solving the " + i + "th one");
         solve(args.slice(2, 2 + args[1]), args[0]);
     }
     return results;
