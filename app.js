@@ -6,8 +6,10 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.post("lazy-developer", (req, res) => {
-  res.send(lazyDevelopers.getNextProbableWords(req.body));
+app.post("/lazy-developer", (req, res) => {
+  const {classes, functions} = req.body;
+  console.log(req.body);
+  res.send(lazyDevelopers.getNextProbableWords(classes, functions));
 });
 
 app.post("/greedymonkey", (req, res) => {
