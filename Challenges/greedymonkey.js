@@ -13,7 +13,7 @@ function solve(maxWeight, maxVolume, fruits) {
 
         for (let j = 0; j < prev.length; j++) {
             // If the fruit is not in basket
-            curr[j] = prev[j];
+            curr.push(prev[j]);
 
             if (prev[j][0] + currWeight <= maxWeight && prev[j][1] + currVolume <= maxVolume) {
                 curr.push([prev[j][0] + currWeight, prev[j][1] + currVolume, prev[j][2] + currValue]);
