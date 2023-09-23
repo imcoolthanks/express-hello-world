@@ -10,15 +10,18 @@ app.use(express.json());
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.post("/lazy-developer", (req, res) => {
-  console.log(req.body);
   const {classes, statements} = req.body;
   res.send(lazyDevelopers.getNextProbableWords(classes, statements));
 });
 
 app.post("/greedymonkey", (req, res) => {
-  console.log(req.body);
   const {w, v, f} = req.body;
   res.json(greedyMonkey.solve(w, v, f));
+})
+
+app.post("/digital-colony", (req, res) => {
+  console.log(req);
+  console.log(req.body);
 })
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
