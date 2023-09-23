@@ -1,8 +1,4 @@
 function solve(maxWeight, maxVolume, fruits) {
-    let currWeight= fruits[0][0];
-    let currVolume = fruits[0][1];
-    let currValue = fruits[0][2];
-
     prev = [[0, 0, 0]];
 
     for (let i = 0; i < fruits.length; i++) {
@@ -21,7 +17,8 @@ function solve(maxWeight, maxVolume, fruits) {
         }
         prev = curr;
     }
-    return Math.max(prev.map((x) => x[2]));
+    prev = prev.map((x) => x[2]);
+    return Math.max(...prev);
 }
 
 module.exports = { solve };
