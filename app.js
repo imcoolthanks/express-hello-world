@@ -18,7 +18,7 @@ app.post("/lazy-developer", (req, res) => {
 app.post("/greedymonkey", (req, res) => {
   console.log(req.body);
   const {w, v, f} = req.body;
-  res.send(greedyMonkey.solve(w, v, f));
+  res.json(greedyMonkey.solve(w, v, f));
 })
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
