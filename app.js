@@ -1,15 +1,18 @@
+const lazyDevelopers = require("./Challenges/lazyDevelopers.js");
+
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
+app.post("lazy-developer", (req, res) => {
+  res.send(lazyDevelopers.getNextProbableWords(req.body));
+});
+
 app.post("/greedymonkey", (req, res) => {
   res.json(req);
-
 })
-
-
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
