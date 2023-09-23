@@ -15,7 +15,8 @@ app.post("/lazy-developer", (req, res) => {
 });
 
 app.post("/greedymonkey", (req, res) => {
-  res.json(req);
+  console.log(req.body);
+  
 })
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
